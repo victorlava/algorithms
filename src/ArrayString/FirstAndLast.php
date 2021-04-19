@@ -15,9 +15,13 @@ class FirstAndLast {
      * @param Integer $target
      * @return Integer[]
      */
-    function searchRange($nums, $target)
+    function searchAndFind($nums, $target)
     {
 
+        // TODO: this seems to work pretty fine, the time/space complexity should be 0(n),
+        // Implement: binary search
+        // Test the performance against binary search
+        
         $indices = [];
 
         for($i = 0; $i < count($nums);$i++) {
@@ -45,13 +49,13 @@ class FirstAndLast {
 }
 
 
-$test = new FirstAndLast();
-print_R($test->searchRange([5,7,7,8,8,10], 8));
-print_R($test->searchRange([5,7,7,8,8,10], 10));
-print_R($test->searchRange([1,4], 4));
-print_R($test->searchRange([3,3,3], 3));
-print_R($test->searchRange([1], 1));
-print_R($test->searchRange([], 0));
+//$test = new FirstAndLast();
+//print_R($test->searchAndFind([5,7,7,8,8,10], 8));
+//print_R($test->searchAndFind([5,7,7,8,8,10], 10));
+//print_R($test->searchAndFind([1,4], 4));
+//print_R($test->searchAndFind([3,3,3], 3));
+//print_R($test->searchAndFind([1], 1));
+//print_R($test->searchAndFind([], 0));
 
 
 
