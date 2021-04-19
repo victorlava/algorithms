@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="2" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="4.036408">
-    <testsuite name="algorithms" tests="2" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="4.036408">
-      <testsuite name="Algorithm\Tests\TwoSumTest" file="/Users/Development/Docker/algorithms/tests/unit/TwoSumTest.php" tests="2" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="4.036408">
-        <testcase name="testBruteForce" class="Algorithm\Tests\TwoSumTest" classname="Algorithm.Tests.TwoSumTest" file="/Users/Development/Docker/algorithms/tests/unit/TwoSumTest.php" line="39" assertions="4" time="3.551266"/>
-        <testcase name="testArrayComplement" class="Algorithm\Tests\TwoSumTest" classname="Algorithm.Tests.TwoSumTest" file="/Users/Development/Docker/algorithms/tests/unit/TwoSumTest.php" line="56" assertions="4" time="0.485142"/>
+  <testsuite name="" tests="3" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="2.791688">
+    <testsuite name="algorithms" tests="3" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="2.791688">
+      <testsuite name="Algorithm\Tests\Unit\FirstAndLastTest" file="/Users/Development/Docker/algorithms/tests/Unit/FirstAndLastTest.php" tests="1" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.000167">
+        <testcase name="testSearchAndFind" class="Algorithm\Tests\Unit\FirstAndLastTest" classname="Algorithm.Tests.Unit.FirstAndLastTest" file="/Users/Development/Docker/algorithms/tests/Unit/FirstAndLastTest.php" line="26" assertions="4" time="0.000167"/>
+      </testsuite>
+      <testsuite name="Algorithm\Tests\Unit\TwoSumTest" file="/Users/Development/Docker/algorithms/tests/Unit/TwoSumTest.php" tests="2" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="2.791521">
+        <testcase name="testBruteForce" class="Algorithm\Tests\Unit\TwoSumTest" classname="Algorithm.Tests.Unit.TwoSumTest" file="/Users/Development/Docker/algorithms/tests/Unit/TwoSumTest.php" line="29" assertions="4" time="2.279876"/>
+        <testcase name="testArrayComplement" class="Algorithm\Tests\Unit\TwoSumTest" classname="Algorithm.Tests.Unit.TwoSumTest" file="/Users/Development/Docker/algorithms/tests/Unit/TwoSumTest.php" line="46" assertions="4" time="0.511645"/>
       </testsuite>
     </testsuite>
   </testsuite>
