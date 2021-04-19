@@ -1,6 +1,8 @@
 <?php
 
-class Solution {
+namespace Algorithm\Arrays;
+
+class TwoSum {
 
     /**
      * @param Integer[] $nums
@@ -29,13 +31,28 @@ class Solution {
 
         throw new \Exception("No two sum solution");
     }
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer[]
+     */
+    function bruteForce($nums, $target)
+    {
+        for ($i = 0; $i < count($nums); $i++) {
+            for($b = 0; $b < count($nums); $b++) {
+                $addition = $nums[$i] + $nums[$b];
+                if($addition === $target && $i !== $b) {
+                    return [$i, $b];
+                }
+            }
+        }
+
+        throw new \Exception('No two sum solution');
+    }
 }
 
-$solution = new Solution;
-
-
-print_R($solution->twoSum([0,7,11,15,21,22,13,6], 9));
-print_R($solution->twoSum([2,7,11,15], 9));
-print_R($solution->twoSum([3,2,4], 6));
-print_R($solution->twoSum([3,3], 6));
-print_R($solution->twoSum([3,9], 6));
+$solution = new TwoSum;
+print_R($solution->bruteForce([3,2,4], 6));
+//print_R($solution->twoSum([3,3], 6));
+//print_R($solution->twoSum([3,9], 6));
