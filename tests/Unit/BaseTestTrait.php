@@ -1,10 +1,10 @@
 <?php
 
-namespace Algorithm\Tests;
+namespace Algorithm\Tests\Unit;
 
 trait BaseTestTrait {
 
-    private function createArrayOfNumbers(int $arraySize): array
+    public function createArrayOfNumbers(int $arraySize): array
     {
         $numbers = [];
 

@@ -1,5 +1,5 @@
 <?php
-namespace Algorithm\Tests;
+namespace Algorithm\Tests\Unit;
 
 use Algorithm\ArrayString\TwoSum;
 use PHPUnit\Framework\TestCase;
