@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class TwoSumTest extends TestCase
 {
+    use BaseTestTrait;
 
     /** @var TwoSum  */
     private $twoSum;
@@ -23,17 +24,6 @@ class TwoSumTest extends TestCase
     public function tearDown(): void
     {
         $this->arrayOfNumbers = null;
-    }
-
-    private function createArrayOfNumbers(int $arraySize): array
-    {
-        $numbers = [];
-
-        for($i = 0; $i < $arraySize; $i++) {
-            $numbers[] = rand(1,30);
-        }
-
-        return $numbers;
     }
     
     public function testBruteForce()
