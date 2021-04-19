@@ -11,10 +11,10 @@ class TwoSum {
      */
     function bruteForce($nums, $target)
     {
-        for ($i = 0; $i < count($nums); $i++) {
-            for($b = 0; $b < count($nums); $b++) {
-                $addition = $nums[$i] + $nums[$b];
-                if($addition === $target && $i !== $b) {
+        for ($i = 0; $i < count($nums); $i++) { // O(n)
+            for($b = 0; $b < count($nums); $b++) { // 0(n2)
+                $addition = $nums[$i] + $nums[$b]; // Getting the sum
+                if($addition === $target && $i !== $b) { // Then comparing it with the target, can't be compared with itself
                     return [$i, $b];
                 }
             }
