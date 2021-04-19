@@ -1,4 +1,7 @@
 <phpunit bootstrap="vendor/autoload.php">
+    <php>
+        <ini name="memory_limit" value="1024M" />
+    </php>
     <testsuites>
         <testsuite name="algorithms">
             <directory>tests</directory>
