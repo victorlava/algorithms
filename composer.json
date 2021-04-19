@@ -1,0 +1,20 @@
+{
+    "name": "victor/algorithms",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Victor Lava",
+            "email": "github@victorlava.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Algorithm\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Algorithm\\Tests\\":  "tests/"}
+    }
+}
