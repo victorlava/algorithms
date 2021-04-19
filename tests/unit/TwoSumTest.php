@@ -1,7 +1,7 @@
 <?php
 namespace Algorithm\Tests;
 
-use Algorithm\Arrays\TwoSum;
+use Algorithm\ArrayString\TwoSum;
 use PHPUnit\Framework\TestCase;
 
 class TwoSumTest extends TestCase
