@@ -9,34 +9,6 @@ class TwoSum {
      * @param Integer $target
      * @return Integer[]
      */
-    function twoSum($nums, $target)
-    {
-        $currentIndex = 0;
-        $futureIndex = $currentIndex;
-        $indices = [];
-
-        for ($currentIndex = 0; $currentIndex < count($nums); $currentIndex++) {
-            $futureIndex++;
-
-            $numValue = $nums[$currentIndex] + $nums[$futureIndex];
-
-            if($numValue === $target) {
-                return [$currentIndex, $futureIndex];
-            }
-
-            if($futureIndex === count($nums) - 1) {
-                break;
-            }
-        }
-
-        throw new \Exception("No two sum solution");
-    }
-
-    /**
-     * @param Integer[] $nums
-     * @param Integer $target
-     * @return Integer[]
-     */
     function bruteForce($nums, $target)
     {
         for ($i = 0; $i < count($nums); $i++) {
@@ -50,9 +22,35 @@ class TwoSum {
 
         throw new \Exception('No two sum solution');
     }
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer[]
+     */
+    function twoSumWithArrayComplement($nums, $target)
+    {
+        $valueAsArrayKey = [];
+
+        for($i = 0; $i < count($nums); $i++) {
+            $valueAsArrayKey[$nums[$i]] = $i;
+            $complement = $target - $nums[$i];
+
+            if(array_key_exists($complement, $valueAsArrayKey)) {
+                return [$valueAsArrayKey[$complement], $i];
+             }
+        }
+
+        throw new \Exception("No two sum solution");
+    }
+
 }
 
-$solution = new TwoSum;
-print_R($solution->bruteForce([3,2,4], 6));
-//print_R($solution->twoSum([3,3], 6));
-//print_R($solution->twoSum([3,9], 6));
+
+$test = new TwoSum();
+print_R($test->twoSumHashTable([2,11,15,7], 9));
+//print_R($test->twoSumHashTable([3,2,4], 6));
+
+
+
+
