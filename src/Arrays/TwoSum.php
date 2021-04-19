@@ -28,15 +28,17 @@ class TwoSum {
      * @param Integer $target
      * @return Integer[]
      */
-    function twoSumWithArrayComplement($nums, $target)
+    function arrayComplement($nums, $target)
     {
         $valueAsArrayKey = [];
 
         for($i = 0; $i < count($nums); $i++) {
-            $valueAsArrayKey[$nums[$i]] = $i;
+            $valueAsArrayKey[$nums[$i]] = $i; // Creating an array that have $nums array values as keys for faster search later, O(n) space complexity
             $complement = $target - $nums[$i];
 
-            if(array_key_exists($complement, $valueAsArrayKey)) {
+            if(array_key_exists($complement, $valueAsArrayKey) && // Checking if $target - $nums[$i] exists in array. Each lookup should be only O(1)
+                $i !== $valueAsArrayKey[$complement]) { // Can't be itself
+
                 return [$valueAsArrayKey[$complement], $i];
              }
         }
@@ -47,9 +49,9 @@ class TwoSum {
 }
 
 
-$test = new TwoSum();
-print_R($test->twoSumHashTable([2,11,15,7], 9));
-//print_R($test->twoSumHashTable([3,2,4], 6));
+//$test = new TwoSum();
+//print_R($test->arrayComplement([2,11,15,7], 9));
+//print_R($test->arrayComplement([3,2,4], 6));
 
 
 
