@@ -14,6 +14,15 @@ class Fibonacci {
         return $this->recursive($n - 1) + $this->recursive($n - 2);
     }
 
+    function recursiveWithMemoization(int $n, &$sequence = [0, 1])
+    {
+        if(!array_key_exists($n,$sequence)) {
+            $sequence[$n] = $this->recursiveWithMemoization($n - 1, $sequence) + $this->recursiveWithMemoization($n - 2, $sequence);
+        }
+
+        return $sequence[$n];
+    }
+
     function iterative(int $numberOfCycles): array
     {
 
@@ -35,6 +44,9 @@ class Fibonacci {
     }
 
 }
+
+//$test = new Fibonacci();
+//echo $test->recursiveWithMemoization(5);
 
 
 
