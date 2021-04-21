@@ -1,6 +1,6 @@
 <?php
 
-namespace Algorithm\ArrayString;
+namespace Algorithm\Number;
 
 class CenturyYear {
 
