@@ -20,7 +20,6 @@ class FibonacciTest extends TestCase
 
     public function testRecursive()
     {
-
         $result = $this->fibonacci->recursive(0);
         $this->assertEquals(0, $result);
 
@@ -33,10 +32,30 @@ class FibonacciTest extends TestCase
         $result = $this->fibonacci->recursive(11);
         $this->assertEquals(89, $result);
 
+        $result = $this->fibonacci->recursive(35);
+        $this->assertEquals(9227465, $result);
     }
+
+    public function testRecursiveWithMemoization()
+    {
+        $result = $this->fibonacci->recursiveWithMemoization(0);
+        $this->assertEquals(0, $result);
+
+        $result = $this->fibonacci->recursiveWithMemoization(1);
+        $this->assertEquals(1, $result);
+
+        $result = $this->fibonacci->recursiveWithMemoization(2);
+        $this->assertEquals(1, $result);
+
+        $result = $this->fibonacci->recursiveWithMemoization(11);
+        $this->assertEquals(89, $result);
+
+        $result = $this->fibonacci->recursiveWithMemoization(35);
+        $this->assertEquals(9227465, $result);
+    }
+
     public function testIterative()
     {
-
         $result = $this->fibonacci->iterative(0);
         $this->assertEquals([0], $result);
 
@@ -49,6 +68,8 @@ class FibonacciTest extends TestCase
         $result = $this->fibonacci->iterative(11);
         $this->assertEquals([0,1,1,2,3,5,8,13,21,34,55,89], $result);
 
+        $result = $this->fibonacci->iterative(35);
+        $this->assertEquals(9227465, $result[count($result) - 1]);
     }
 
 }

@@ -16,7 +16,7 @@ class Fibonacci {
 
     function recursiveWithMemoization(int $n, &$sequence = [0, 1])
     {
-        if(!array_key_exists($n,$sequence)) {
+        if(!isset($sequence[$n])) {
             $sequence[$n] = $this->recursiveWithMemoization($n - 1, $sequence) + $this->recursiveWithMemoization($n - 2, $sequence);
         }
 
