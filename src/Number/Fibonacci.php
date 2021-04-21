@@ -5,7 +5,14 @@ namespace Algorithm\Number;
 class Fibonacci {
 
 
-    function recursive() {}
+    function recursive(int $n)
+    {
+        if($n === 0 || $n === 1) {
+            return $n;
+        }
+
+        return $this->recursive($n - 1) + $this->recursive($n - 2);
+    }
 
     function iterative(int $numberOfCycles): array
     {
@@ -31,10 +38,12 @@ class Fibonacci {
 
 
 $number = new Fibonacci();
-print_R($number->iterative(100));
-print_R($number->iterative(0));
-print_R($number->iterative(1));
-print_R($number->iterative(5));
+echo $number->recursive(10);
+
+//print_R($number->iterative(100));
+//print_R($number->iterative(0));
+//print_R($number->iterative(3));
+//print_R($number->iterative(5));
 
 
 
