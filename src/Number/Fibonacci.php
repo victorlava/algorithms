@@ -37,13 +37,5 @@ class Fibonacci {
 }
 
 
-$number = new Fibonacci();
-echo $number->recursive(10);
-
-//print_R($number->iterative(100));
-//print_R($number->iterative(0));
-//print_R($number->iterative(3));
-//print_R($number->iterative(5));
-
 
 
