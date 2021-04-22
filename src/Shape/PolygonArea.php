@@ -12,35 +12,26 @@ class PolygonArea {
      */
     function shapeArea(int $n) {
 
-        // 1. Find the middle box count
-        // 2. Count bottom sections with n - 2
-        // 3. Double the result, because we counted just half of the polygon
 
+        if($n === 1) {
+            return 1;
+        }
 
-        //TODO: fix this, crappy idea, doesn't scale with bigger numbers,
-        // wanted this solved mathmetatically by figuring out the factor
-        // in which polygon increase and then just calculating the area
-        
-        // 1 5 13 24
-        // 1 3 5 7 9 11
-        // 1 2 3 4 5 6
-        $middleBoxes = 1;
+        $sequence = 1;
+        for($i = 0; $i < $n - 1; $i++) {
+            $sequence += 2;
+        }
 
-       $factor = 0.866666;
+        $boxCount = 0;
+        $middleBoxCount = $sequence;
 
-       $n * $middleBoxes;
+        for($i = $sequence; $sequence > 0; $i--) {
+            $boxCount += $sequence;
+            $sequence -= 2;
+        }
 
-       for($i = 1; $i < $n; $i++) {
-           $middleBoxes += 2;
-       }
-
-       $area = $n * $factor * $middleBoxes;
-
-        return round($area);
-
+        return (($boxCount - $middleBoxCount) * 2) + $middleBoxCount;
     }
-
-
 
 }
 
