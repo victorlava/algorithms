@@ -22,14 +22,31 @@ class Consecutive {
         // 4. Check if pointer2 is bigger than pointer1
         // 5. If it's bigger than 1 insert a new value between them
 
+        sort($statues);
+
+        $b = 1;
+        $howManyNumbersMissing = 0;
+        for($a = 0; $a < count($statues); $a++) {
+            if(!isset($statues[$b])) { break; }
+
+            $difference = $statues[$b] - $statues[$a];
+
+            if($difference > 1) {
+                $howManyNumbersMissing += $difference - 1;
+            }
+
+            $b++;
+        }
+
+        return $howManyNumbersMissing;
     }
 
 
 }
 
 
-$test = new Anagram();
-print_R($test->makeArrayConsecutive([6, 2, 3, 8]); // returns 3, because we need to insert 4 5 7
+$test = new Consecutive();
+print_R($test->makeArrayConsecutive([6, 2, 3, 8])); // returns 3, because we need to insert 4 5 7
 
 
 
