@@ -16,11 +16,11 @@ class MergeInterval {
     function merge(array $intervals)
     {
 
-       usort($intervals, 'self::sort');
+        // We make sure we sort the intervals, for ex. [9,12],[2,4],[1,2] => [1,2],[2,4],[9,12]
+       usort($intervals, 'self::sort'); // Make sure we have a sorted intervals
 
        $merged = [];
        foreach ($intervals as $interval) {
-
            // Adding our first interval in the merged array if there are no values
            // Also getting the last interval in the merged array and checking if it's second value is less than the current's interval first value
            // If it is then there's no overlap, no modifications neccessery for the merged interval
@@ -31,11 +31,9 @@ class MergeInterval {
                // We grab the last interval index in $merged array and override it's second value
                // Second value can be either from interval or the last value in merged array, that's why we use max(), we need to pick the biggest one
                // Because there might be cases like this: [1,4] or [2,3] where $merged[1] is bigger than $interval[1}
-
                $lastIndex = count($merged) - 1; // grab the last index of merged
                $merged[$lastIndex][1] = max(end($merged)[1], $interval[1]);
            }
-
        }
 
        return $merged;
