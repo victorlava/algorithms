@@ -21,10 +21,18 @@ class MergeInterval {
        $merged = [];
        foreach ($intervals as $interval) {
 
-           if(empty($merged) || end($merged)[1] < $interval[0]) { // if there's no merged values then add the value or if they are not overlapping
+           // Adding our first interval in the merged array if there are no values
+           // Also getting the last interval in the merged array and checking if it's second value is less than the current's interval first value
+           // If it is then there's no overlap, no modifications neccessery for the merged interval
+           if(empty($merged) || end($merged)[1] < $interval[0]) {
                 $merged[] = $interval;
-           } else { // overlapping
-               $merged[count($merged) - 1][1] = max(end($merged)[1], $interval[1]);
+           } else {
+               // Otherwise overlapping is found
+               // We grab the last interval index in $merged array and override it's second value
+               // Second value
+
+               $lastIndex = count($merged) - 1; // grab the last index of merged
+               $merged[$lastIndex][1] = max(end($merged)[1], $interval[1]);
            }
 
        }
